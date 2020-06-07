@@ -42,7 +42,7 @@ if [ $ask_start = 'y' ]; then
    sleep 1
    clear
    logo
-   echo 'Ngrok Fowarded Port(ex:4444,3333,8080,etc'
+   echo 'Ngrok Fowarded Port(ex:4444,3333,8080,etc)'
    read fport
    ip='0.tcp.ngrok.io'
    echo 'Ngrok Port :'
